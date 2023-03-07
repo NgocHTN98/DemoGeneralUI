@@ -9,11 +9,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var vm: ViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        initViewModel()
     }
 
+    
+    func initViewModel() {
+        self.vm = ViewModel()
+        self.vm?.getData()
+    }
 
 }
 

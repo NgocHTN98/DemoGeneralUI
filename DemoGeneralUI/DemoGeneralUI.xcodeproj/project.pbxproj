@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E16CE28D29B6E40C0099563D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE28C29B6E40C0099563D /* Service.swift */; };
+		E16CE28F29B6E7B30099563D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16CE28E29B6E7B30099563D /* ViewModel.swift */; };
 		E1F0843029B59E1900F75A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0842F29B59E1900F75A41 /* AppDelegate.swift */; };
 		E1F0843229B59E1900F75A41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0843129B59E1900F75A41 /* SceneDelegate.swift */; };
 		E1F0843429B59E1900F75A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F0843329B59E1900F75A41 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E16CE28C29B6E40C0099563D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E16CE28E29B6E7B30099563D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		E1F0842C29B59E1900F75A41 /* DemoGeneralUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoGeneralUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1F0842F29B59E1900F75A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1F0843129B59E1900F75A41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				E1F0842F29B59E1900F75A41 /* AppDelegate.swift */,
 				E1F0843129B59E1900F75A41 /* SceneDelegate.swift */,
 				E1F0843329B59E1900F75A41 /* ViewController.swift */,
+				E16CE28E29B6E7B30099563D /* ViewModel.swift */,
+				E16CE28C29B6E40C0099563D /* Service.swift */,
 				E1F0843529B59E1900F75A41 /* Main.storyboard */,
 				E1F0843829B59E1900F75A41 /* Assets.xcassets */,
 				E1F0843A29B59E1900F75A41 /* LaunchScreen.storyboard */,
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16CE28F29B6E7B30099563D /* ViewModel.swift in Sources */,
 				E1F0843429B59E1900F75A41 /* ViewController.swift in Sources */,
+				E16CE28D29B6E40C0099563D /* Service.swift in Sources */,
 				E1F0843029B59E1900F75A41 /* AppDelegate.swift in Sources */,
 				E1F0843229B59E1900F75A41 /* SceneDelegate.swift in Sources */,
 			);
@@ -437,6 +445,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARSKD2ZA85;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoGeneralUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -464,6 +473,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ARSKD2ZA85;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DemoGeneralUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
