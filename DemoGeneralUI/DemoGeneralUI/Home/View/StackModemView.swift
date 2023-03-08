@@ -9,11 +9,27 @@ import Foundation
 import UIKit
 
 class StackModemView: UIView{
-    lazy var containerView: UIView = {
+    
+    lazy var vModemContent: UIView = {
         let v = UIView()
          v.translatesAutoresizingMaskIntoConstraints = false
          return v
-     }()
+    }()
+    
+    
+    lazy var vModemTitle: UIStackView = {
+        let v = UIStackView()
+        v.axis = .horizontal
+        v.distribution = .equalSpacing
+        v.translatesAutoresizingMaskIntoConstraints = false
+         return v
+    }()
+    
+    lazy var vModemInfo:UIView = {
+        let v = UIView()
+         v.translatesAutoresizingMaskIntoConstraints = false
+         return v
+    }()
     
     lazy var lbModemName: UILabel = {
        let lb = UILabel()
@@ -44,4 +60,53 @@ class StackModemView: UIView{
         lb.translatesAutoresizingMaskIntoConstraints = false
         return lb
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.createUI()
+    }
+   
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.createUI()
+    }
+    
+    
+    func createUI(){
+        self.addSubview(vModemContent)
+        self.addSubview(imgModem)
+        
+        vModemContent.addSubview(vModemTitle)
+        vModemContent.addSubview(lbModemInfo)
+        vModemContent.addSubview(lbModemDetail)
+        
+        vModemTitle.addArrangedSubview(lbModemName)
+        vModemTitle.addArrangedSubview(imgModem)
+        
+        
+        NSLayoutConstraint.activate([
+            
+            
+            self.vModemContent.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.vModemContent.topAnchor.constraint(equalTo: self.topAnchor,constant: 22),
+            self.vModemContent.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.vModemContent.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+
+            self.imgModem.topAnchor.constraint(equalTo: self.topAnchor),
+            self.imgModem.trailingAnchor.constraint(equalTo: self.trailingAnchor,constant: -44.57),
+            self.imgModem.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -16.24),
+            self.imgModem.widthAnchor.constraint(equalToConstant: 76.05),
+            
+            self.vModemTitle.leadingAnchor.constraint(equalTo: self.vModemContent.leadingAnchor, constant: 16),
+            self.vModemTitle.trailingAnchor.constraint(equalTo: self.imgModem.leadingAnchor,constant: -16),
+            
+            self.lbModemInfo.leadingAnchor.constraint(equalTo: self.vModemContent.leadingAnchor,constant: 16),
+            self.lbModemInfo.topAnchor.constraint(equalTo: self.vModemTitle.bottomAnchor, constant: 16),
+            
+            self.lbModemDetail.topAnchor.constraint(equalTo: self.lbModemInfo.bottomAnchor,constant: 15.64),
+            self.lbModemDetail.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+        
+        
+    }
 }
