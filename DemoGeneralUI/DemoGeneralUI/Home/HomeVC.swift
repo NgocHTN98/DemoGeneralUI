@@ -10,7 +10,7 @@ import UIKit
 
 class HomeVC: UIViewController{
     
-    @IBOutlet weak var clvHome: UICollectionView!
+    @IBOutlet weak var tbvHome: UITableView!
     
     var vm: HomeVM!
     override func viewDidLoad() {
@@ -20,11 +20,9 @@ class HomeVC: UIViewController{
     }
     
     func setupClt(){
-        clvHome.delegate = self
-        clvHome.dataSource = self
-        clvHome.register(UINib(nibName: "StackModemCltCell", bundle: nil), forCellWithReuseIdentifier: "StackModemCltCell")
-        clvHome.register(UINib(nibName: "StackStatusCltCell", bundle: nil), forCellWithReuseIdentifier: "StackStatusCltCell")
-        clvHome.register(UINib(nibName: "StackServiceCltCell", bundle: nil), forCellWithReuseIdentifier: "StackServiceCltCell")
+        tbvHome.delegate = self
+        tbvHome.dataSource = self
+
         
     }
     
@@ -34,51 +32,19 @@ class HomeVC: UIViewController{
         
         vm.baseCallbackReloadData = {
             [weak self] in
-                self?.clvHome.reloadData()
+                self?.tbvHome.reloadData()
         }
     }
 }
 
-extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return vm.homeData?.count ?? 0
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let vm = vm.itemAt(index: section) else{
-            return 0
-        }
-        
-        switch vm.type{
-        case .List:
-            return vm.attributes?.items.count ?? 0
-        default:
-            return 1
-        }
+extension HomeVC: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        guard let vm = vm.itemAt(index: indexPath.row) else{
-            return UICollectionViewCell()
-        }
-        
-        switch(vm.type){
-        case .StackModem:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackModemCltCell", for: indexPath) as? StackModemCltCell else {return UICollectionViewCell()}
-            cell.vm = vm
-            return cell
-            
-        case .StackConnect:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackStatusCltCell", for: indexPath) as? StackStatusCltCell else {return UICollectionViewCell()}
-            cell.vm = vm
-            return cell
-        case .StackInfo:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackInfoCltCell", for: indexPath) as? StackInfoCltCell else {return UICollectionViewCell()}
-            cell.vm = vm
-            return cell
-        default:
-            return UICollectionViewCell()
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let vm = vm?.itemAt(index: indexPath.row) else{return UITableViewCell()}
+
+        return UITableViewCell()
     }
 }

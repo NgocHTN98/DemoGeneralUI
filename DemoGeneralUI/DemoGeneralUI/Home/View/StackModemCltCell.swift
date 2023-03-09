@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class StackModemCltCell:UICollectionViewCell{
+class StackModemCltCell:UITableViewCell{
     
 
     @IBOutlet weak var vBground: StackModemView!
@@ -21,7 +21,6 @@ class StackModemCltCell:UICollectionViewCell{
     }
     
     func setUpUI(){
-
         vBground.vm = vm
     }
     

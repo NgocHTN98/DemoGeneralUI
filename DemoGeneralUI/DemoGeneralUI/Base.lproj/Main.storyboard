@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -65,44 +64,28 @@
                                     <constraint firstAttribute="height" constant="120" id="GBf-jw-G0H"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XW3-zI-rSU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wag-1Z-JbC">
                                 <rect key="frame" x="0.0" y="128" width="393" height="604"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jR0-aq-ypZ">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wdX-Uy-bDe">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vY6-nD-pe8">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rjk-y3-X5S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="C01-IL-G2o" firstAttribute="leading" secondItem="Rjk-y3-X5S" secondAttribute="leading" id="152-aj-qzO"/>
-                            <constraint firstItem="XW3-zI-rSU" firstAttribute="leading" secondItem="Rjk-y3-X5S" secondAttribute="leading" id="62d-z2-aTg"/>
                             <constraint firstItem="Z3t-Pv-NdP" firstAttribute="top" secondItem="Q3v-JE-vxf" secondAttribute="top" id="JWq-8e-xnh"/>
                             <constraint firstItem="Rjk-y3-X5S" firstAttribute="trailing" secondItem="C01-IL-G2o" secondAttribute="trailing" id="LLM-GH-YMo"/>
+                            <constraint firstItem="C01-IL-G2o" firstAttribute="top" secondItem="wag-1Z-JbC" secondAttribute="bottom" id="SFU-Co-CVN"/>
                             <constraint firstItem="Rjk-y3-X5S" firstAttribute="trailing" secondItem="Z3t-Pv-NdP" secondAttribute="trailing" id="VO3-5F-gpZ"/>
-                            <constraint firstItem="XW3-zI-rSU" firstAttribute="top" secondItem="Z3t-Pv-NdP" secondAttribute="bottom" id="gGq-0m-O3v"/>
-                            <constraint firstItem="Rjk-y3-X5S" firstAttribute="trailing" secondItem="XW3-zI-rSU" secondAttribute="trailing" id="hh9-NM-KQZ"/>
+                            <constraint firstItem="Rjk-y3-X5S" firstAttribute="trailing" secondItem="wag-1Z-JbC" secondAttribute="trailing" id="X28-9k-1fd"/>
+                            <constraint firstItem="wag-1Z-JbC" firstAttribute="top" secondItem="Z3t-Pv-NdP" secondAttribute="bottom" id="fnb-FE-0Am"/>
                             <constraint firstAttribute="bottom" secondItem="C01-IL-G2o" secondAttribute="bottom" id="iai-hh-SmQ"/>
                             <constraint firstItem="Z3t-Pv-NdP" firstAttribute="leading" secondItem="Rjk-y3-X5S" secondAttribute="leading" id="nbw-H4-PGc"/>
-                            <constraint firstItem="C01-IL-G2o" firstAttribute="top" secondItem="XW3-zI-rSU" secondAttribute="bottom" id="wxY-e5-J23"/>
+                            <constraint firstItem="wag-1Z-JbC" firstAttribute="leading" secondItem="Rjk-y3-X5S" secondAttribute="leading" id="uk9-k5-nvh"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="clvHome" destination="XW3-zI-rSU" id="Lea-xp-zPE"/>
+                        <outlet property="tbvHome" destination="wag-1Z-JbC" id="gzg-YD-Pyo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efM-xy-Cbx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
