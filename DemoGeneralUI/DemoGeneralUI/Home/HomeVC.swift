@@ -32,7 +32,9 @@ class HomeVC: UIViewController{
         
         vm.baseCallbackReloadData = {
             [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self?.tbvHome.reloadData()
+            }
         }
     }
 }
