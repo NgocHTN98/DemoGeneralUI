@@ -10,6 +10,12 @@ import UIKit
 
 class StackModemView: UIView{
     
+    var vm: AttributeRes?{
+        didSet{
+            setupUI()
+        }
+    }
+    
     lazy var vModemContent: UIView = {
         let v = UIView()
          v.translatesAutoresizingMaskIntoConstraints = false
@@ -109,4 +115,33 @@ class StackModemView: UIView{
         
         
     }
+    
+    func setupUI(){
+        guard let vm = vm else {return}
+        
+        for item in vm.attributes?.items ?? [] {
+            let id = StackModemId(rawValue: item.id ?? "none") ?? .none
+            switch(id){
+            case .modem_title:
+                lbModemName.parseLabel(attr: item)
+            case .modem_description:
+                lbModemInfo.parseLabel(attr: item)
+            case .modem_detail:
+                lbModemDetail.parseLabel(attr: item)
+            case .modem_img:
+                imgModem.parseImg(attr: item)
+            case .none:
+                return
+            }
+        }
+    }
+}
+
+
+enum StackModemId: String{
+    case modem_title
+    case modem_description
+    case modem_detail
+    case modem_img
+    case none
 }

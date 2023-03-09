@@ -18,6 +18,8 @@ class HomeVM:BaseViewModel<AttributeRes>{
             
             self?.homeData = rp.group
             
+            self?.setDataItems(data: self?.homeData ?? [])
+            
         })
     }
 }

@@ -20,6 +20,8 @@ class HomeVC: UIViewController{
     }
     
     func setupClt(){
+        clvHome.delegate = self
+        clvHome.dataSource = self
         clvHome.register(UINib(nibName: "StackModemCltCell", bundle: nil), forCellWithReuseIdentifier: "StackModemCltCell")
         clvHome.register(UINib(nibName: "StackStatusCltCell", bundle: nil), forCellWithReuseIdentifier: "StackStatusCltCell")
         clvHome.register(UINib(nibName: "StackServiceCltCell", bundle: nil), forCellWithReuseIdentifier: "StackServiceCltCell")
@@ -29,6 +31,11 @@ class HomeVC: UIViewController{
     func initVM(){
         vm = HomeVM()
         vm.fetchData(vc: self)
+        
+        vm.baseCallbackReloadData = {
+            [weak self] in
+                self?.clvHome.reloadData()
+        }
     }
 }
 
@@ -59,15 +66,16 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource{
         switch(vm.type){
         case .StackModem:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackModemCltCell", for: indexPath) as? StackModemCltCell else {return UICollectionViewCell()}
-            
+            cell.vm = vm
             return cell
             
         case .StackConnect:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackStatusCltCell", for: indexPath) as? StackStatusCltCell else {return UICollectionViewCell()}
-            
+            cell.vm = vm
             return cell
         case .StackInfo:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StackInfoCltCell", for: indexPath) as? StackInfoCltCell else {return UICollectionViewCell()}
+            cell.vm = vm
             return cell
         default:
             return UICollectionViewCell()

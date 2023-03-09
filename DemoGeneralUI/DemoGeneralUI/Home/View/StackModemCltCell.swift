@@ -13,9 +13,18 @@ class StackModemCltCell:UICollectionViewCell{
 
     @IBOutlet weak var vBground: StackModemView!
     
+    var vm: AttributeRes?
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUpUI()
     }
+    
+    func setUpUI(){
+
+        vBground.vm = vm
+    }
+    
 
 }
 
