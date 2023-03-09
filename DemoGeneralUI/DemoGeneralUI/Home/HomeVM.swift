@@ -6,9 +6,25 @@
 //
 
 import Foundation
+import UIKit
 
-class HomeVM{
-    init(){
-        
+class HomeVM:BaseViewModel<AttributeRes>{
+
+    var homeData: [AttributeRes]?
+    
+    func fetchData(vc: UIViewController){
+        Service().request(callBackData: {
+           [weak self] rp in
+            
+            self?.homeData = rp.group
+            
+        })
     }
 }
+
+//enum HomeViewModelCellType{
+//    case StackModemCltCellType
+//    case StackStatusCltCellType
+//    case StackServiceCltCellType
+//
+//}
