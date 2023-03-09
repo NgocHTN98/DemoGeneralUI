@@ -10,7 +10,7 @@ import Foundation
 class Service {
     
     func request(callBackData: ((Response)->())? = nil) {
-        var request = URLRequest(url: URL(string: "https://mock.apidog.com/m1/359057-0-default/m1/359057-0-default/m1/359057-0-default/m2/359057-0-default/3648051")!)
+        var request = URLRequest(url: URL(string: "https://mock.apidog.com/m2/359057-0-default/3650434")!)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -49,8 +49,11 @@ struct AttributeRes: Codable  {
     let text_color: String?
     let size: Int?
     let maxLines: Int?
-    
     let image_name: String?
+    let width_height_ratio: Float?
+    let width_ratio_parent_view: Float?
+    let space_vertical: Float?
+    let space_horizatal: Float?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -61,6 +64,10 @@ struct AttributeRes: Codable  {
         case image_name
         case size
         case maxLines
+        case width_height_ratio
+        case width_ratio_parent_view
+        case space_vertical
+        case space_horizatal
    }
     
     init(from decoder: Decoder) throws {
@@ -78,6 +85,10 @@ struct AttributeRes: Codable  {
         
         //image
         self.image_name = try container.decodeIfPresent(String.self, forKey: .image_name) ?? ""
+        self.width_height_ratio = try container.decodeIfPresent(Float.self, forKey: .width_height_ratio)
+        self.width_ratio_parent_view = try container.decodeIfPresent(Float.self, forKey: .width_ratio_parent_view)
+        self.space_vertical = try container.decodeIfPresent(Float.self, forKey: .space_vertical)
+        self.space_horizatal = try container.decodeIfPresent(Float.self, forKey: .space_horizatal)
     }
     
     func encode(to encoder: Encoder) throws {

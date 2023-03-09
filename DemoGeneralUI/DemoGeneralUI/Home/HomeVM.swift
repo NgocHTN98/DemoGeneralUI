@@ -23,10 +23,3 @@ class HomeVM:BaseViewModel<AttributeRes>{
         })
     }
 }
-
-//enum HomeViewModelCellType{
-//    case StackModemCltCellType
-//    case StackStatusCltCellType
-//    case StackServiceCltCellType
-//
-//}

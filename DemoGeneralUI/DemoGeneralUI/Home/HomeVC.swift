@@ -22,8 +22,8 @@ class HomeVC: UIViewController{
     func setupClt(){
         tbvHome.delegate = self
         tbvHome.dataSource = self
-
-        
+        tbvHome.register(cell: StackModemCltCell.self)
+        tbvHome.register(cell: ListItemTblCell.self)
     }
     
     func initVM(){
@@ -46,7 +46,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let vm = vm?.itemAt(index: indexPath.row) else{return UITableViewCell()}
-
-        return UITableViewCell()
+        switch vm.type{
+        case .List:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ListItemTblCell") as! ListItemTblCell
+            guard let vm = vm.attributes?.items else { return UITableViewCell()}
+            cell.vm = vm
+            return cell
+        case .StackModem:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "StackModemCltCell") as! StackModemCltCell
+            cell.vm = vm
+            return cell
+        default: return UITableViewCell()
+        }
     }
 }
