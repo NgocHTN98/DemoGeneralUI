@@ -1,27 +1,28 @@
 //
-//  StackModemCltCell.swift
+//  StackModemTblCell.swift
 //  DemoGeneralUI
 //
-//  Created by Nghia Dao on 3/7/23.
+//  Created by Nghia Dao on 3/9/23.
 //
 
 import Foundation
 import UIKit
 
-class StackModemCltCell:UITableViewCell{
+class StackModemTblCell:UITableViewCell{
     
-
     @IBOutlet weak var lbModemTitle: UILabel!
     @IBOutlet weak var lbInfo: UILabel!
     @IBOutlet weak var lbDetail: UILabel!
-    @IBOutlet weak var imgDropdown: UIImageView!
-    
     @IBOutlet weak var imgModem: UIImageView!
-    var vm: AttributeRes?
+    
+    var vm: AttributeRes?{
+        didSet{
+            setupUI()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupUI()
     }
     
 
@@ -30,7 +31,7 @@ class StackModemCltCell:UITableViewCell{
         guard let vm = vm else {return}
         
         for item in vm.attributes?.items ?? [] {
-            let id = StackModemId(rawValue: item.id ?? "none") ?? .none
+            let id = StackModemId(rawValue: item.id ) ?? .none
             switch(id){
             case .modem_title:
                 lbModemTitle.parseLabel(attr: item)

@@ -58,9 +58,9 @@ extension ListItemTblCell: UICollectionViewDataSource, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthScreen = UIScreen.main.bounds.width
-        guard let ratioParent = vm[indexPath.row].width_ratio_parent_view else { return .zero }
+       let ratioParent = vm[indexPath.row].width_ratio_parent_view
         let widthCell = widthScreen/CGFloat(ratioParent)
-        guard let ratioHeight = vm[indexPath.row].width_height_ratio else { return .zero }
+        let ratioHeight = vm[indexPath.row].width_height_ratio
         let heightCell = widthCell * CGFloat(ratioHeight)
         return CGSize(width: widthCell, height: heightCell)
     }

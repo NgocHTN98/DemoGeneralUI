@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		A388041429B734B700BEC662 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388041329B734B700BEC662 /* HomeVM.swift */; };
 		A388041629B734D500BEC662 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388041529B734D500BEC662 /* HomeVC.swift */; };
-		A388041B29B73C5500BEC662 /* StackModemCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388041A29B73C5500BEC662 /* StackModemCltCell.swift */; };
-		A388041F29B742CF00BEC662 /* StackModemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388041E29B742CF00BEC662 /* StackModemView.swift */; };
 		A388042129B8314800BEC662 /* StackStatusCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388042029B8314800BEC662 /* StackStatusCltCell.swift */; };
 		A388042329B8348900BEC662 /* StackStatusCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A388042229B8348900BEC662 /* StackStatusCltCell.xib */; };
 		A388042529B83F1700BEC662 /* StackInfoCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388042429B83F1700BEC662 /* StackInfoCltCell.swift */; };
@@ -21,6 +19,10 @@
 		A388042F29B864E600BEC662 /* LineCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A388042E29B864E600BEC662 /* LineCltCell.xib */; };
 		A388043129B8674500BEC662 /* StackServiceCltCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388043029B8674500BEC662 /* StackServiceCltCell.swift */; };
 		A388043329B8678300BEC662 /* StackServiceCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A388043229B8678300BEC662 /* StackServiceCltCell.xib */; };
+		A388043629B9AF5000BEC662 /* ListItemTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A388043429B9AF5000BEC662 /* ListItemTblCell.xib */; };
+		A388043729B9AF5000BEC662 /* ListItemTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388043529B9AF5000BEC662 /* ListItemTblCell.swift */; };
+		A388043929B9C7CC00BEC662 /* StackModemTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A388043829B9C7CC00BEC662 /* StackModemTblCell.swift */; };
+		A388043B29B9C82100BEC662 /* StackModemTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A388043A29B9C82100BEC662 /* StackModemTblCell.xib */; };
 		A3C577DF29B9168000A68255 /* StackModemCltCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A3C577DE29B9168000A68255 /* StackModemCltCell.xib */; };
 		A3C577E329B9181F00A68255 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C577E229B9181F00A68255 /* BaseViewModel.swift */; };
 		A3C5780629B92EA300A68255 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C577E529B92EA200A68255 /* Extension+UILabel.swift */; };
@@ -90,8 +92,6 @@
 /* Begin PBXFileReference section */
 		A388041329B734B700BEC662 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		A388041529B734D500BEC662 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		A388041A29B73C5500BEC662 /* StackModemCltCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModemCltCell.swift; sourceTree = "<group>"; };
-		A388041E29B742CF00BEC662 /* StackModemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModemView.swift; sourceTree = "<group>"; };
 		A388042029B8314800BEC662 /* StackStatusCltCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackStatusCltCell.swift; sourceTree = "<group>"; };
 		A388042229B8348900BEC662 /* StackStatusCltCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackStatusCltCell.xib; sourceTree = "<group>"; };
 		A388042429B83F1700BEC662 /* StackInfoCltCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackInfoCltCell.swift; sourceTree = "<group>"; };
@@ -102,6 +102,10 @@
 		A388042E29B864E600BEC662 /* LineCltCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LineCltCell.xib; sourceTree = "<group>"; };
 		A388043029B8674500BEC662 /* StackServiceCltCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackServiceCltCell.swift; sourceTree = "<group>"; };
 		A388043229B8678300BEC662 /* StackServiceCltCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackServiceCltCell.xib; sourceTree = "<group>"; };
+		A388043429B9AF5000BEC662 /* ListItemTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListItemTblCell.xib; sourceTree = "<group>"; };
+		A388043529B9AF5000BEC662 /* ListItemTblCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemTblCell.swift; sourceTree = "<group>"; };
+		A388043829B9C7CC00BEC662 /* StackModemTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackModemTblCell.swift; sourceTree = "<group>"; };
+		A388043A29B9C82100BEC662 /* StackModemTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackModemTblCell.xib; sourceTree = "<group>"; };
 		A3C577DE29B9168000A68255 /* StackModemCltCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StackModemCltCell.xib; sourceTree = "<group>"; };
 		A3C577E229B9181F00A68255 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A3C577E529B92EA200A68255 /* Extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
@@ -194,8 +198,8 @@
 		A388041729B73BA200BEC662 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A388041A29B73C5500BEC662 /* StackModemCltCell.swift */,
-				A388041E29B742CF00BEC662 /* StackModemView.swift */,
+				A388043529B9AF5000BEC662 /* ListItemTblCell.swift */,
+				A388043429B9AF5000BEC662 /* ListItemTblCell.xib */,
 				A388042029B8314800BEC662 /* StackStatusCltCell.swift */,
 				A388042229B8348900BEC662 /* StackStatusCltCell.xib */,
 				A388042429B83F1700BEC662 /* StackInfoCltCell.swift */,
@@ -208,6 +212,8 @@
 				A388043229B8678300BEC662 /* StackServiceCltCell.xib */,
 				A3C577DE29B9168000A68255 /* StackModemCltCell.xib */,
 				A3C5782729B9305500A68255 /* Extension.swift */,
+				A388043829B9C7CC00BEC662 /* StackModemTblCell.swift */,
+				A388043A29B9C82100BEC662 /* StackModemTblCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A388043B29B9C82100BEC662 /* StackModemTblCell.xib in Resources */,
 				A388042329B8348900BEC662 /* StackStatusCltCell.xib in Resources */,
 				E1F0843C29B59E1900F75A41 /* LaunchScreen.storyboard in Resources */,
 				A388043329B8678300BEC662 /* StackServiceCltCell.xib in Resources */,
@@ -419,6 +426,7 @@
 				A388042F29B864E600BEC662 /* LineCltCell.xib in Resources */,
 				A3C5782229B92EA300A68255 /* PasswordView in Resources */,
 				A388042B29B8422600BEC662 /* ImageCltCell.xib in Resources */,
+				A388043629B9AF5000BEC662 /* ListItemTblCell.xib in Resources */,
 				E1F0843929B59E1900F75A41 /* Assets.xcassets in Resources */,
 				E1F0843729B59E1900F75A41 /* Main.storyboard in Resources */,
 			);
@@ -482,15 +490,15 @@
 				A3C5782129B92EA300A68255 /* Extension+UIDevice.swift in Sources */,
 				A388041429B734B700BEC662 /* HomeVM.swift in Sources */,
 				A3C5780929B92EA300A68255 /* Extension+NSLayoutConstraint.swift in Sources */,
-				A388041B29B73C5500BEC662 /* StackModemCltCell.swift in Sources */,
 				A3C5781B29B92EA300A68255 /* Extension+Formatter.swift in Sources */,
 				A3C5782829B9305500A68255 /* Extension.swift in Sources */,
+				A388043929B9C7CC00BEC662 /* StackModemTblCell.swift in Sources */,
 				A3C5780C29B92EA300A68255 /* CALayer+BorderColorNib.swift in Sources */,
 				A3C577E329B9181F00A68255 /* BaseViewModel.swift in Sources */,
 				A3C5782429B92EA300A68255 /* UITableView+CellRegister.swift in Sources */,
 				E1F0843029B59E1900F75A41 /* AppDelegate.swift in Sources */,
+				A388043729B9AF5000BEC662 /* ListItemTblCell.swift in Sources */,
 				A3C5781729B92EA300A68255 /* Extension+String.swift in Sources */,
-				A388041F29B742CF00BEC662 /* StackModemView.swift in Sources */,
 				E1F0843229B59E1900F75A41 /* SceneDelegate.swift in Sources */,
 				A3C5780D29B92EA300A68255 /* Extension+UIButton.swift in Sources */,
 			);

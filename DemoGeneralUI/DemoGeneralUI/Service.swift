@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class Service {
     
     func request(callBackData: ((Response)->())? = nil) {
@@ -20,7 +21,6 @@ class Service {
             do {
                 let json = try JSONDecoder().decode(Response.self, from: _data)
 
-                print(json)
                 callBackData?(json)
                 
             } catch {
@@ -38,22 +38,23 @@ struct Response: Codable {
     enum CodingKeys: String, CodingKey {
        case group
    }
+    
 }
 
 // MARK: - Group
 struct AttributeRes: Codable  {
-    let attributes: ItemAttributeRes?
-    let id: String?
-    let type: TypeComponent
-    let text_content: String?
-    let text_color: String?
-    let size: Int?
-    let maxLines: Int?
-    let image_name: String?
-    let width_height_ratio: Float?
-    let width_ratio_parent_view: Float?
-    let space_vertical: Float?
-    let space_horizatal: Float?
+    var attributes: ItemAttributeRes?
+    var id: String = ""
+    var type: TypeComponent = .None
+    var text_content: String = ""
+    var text_color: String = ""
+    var size: Int = 0
+    var maxLines: Int = 0
+    var image_name: String = ""
+    var width_height_ratio: Float = 0.0
+    var width_ratio_parent_view: Float = 0.0
+    var space_vertical: Float = 0.0
+    var space_horizatal: Float = 0.0
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -72,23 +73,24 @@ struct AttributeRes: Codable  {
     
     init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
+        print(container)
         self.attributes = try container.decodeIfPresent(ItemAttributeRes.self, forKey: .attributes) ?? nil
         self.id = try container.decodeIfPresent(String.self, forKey: .id) ?? ""
-        let strType = try container.decodeIfPresent(String.self, forKey: .type) ?? "None"
-        self.type = TypeComponent(rawValue: strType) ?? .None
+        let strType = try container.decodeIfPresent(String.self, forKey: .type)
+        self.type = TypeComponent(rawValue: strType ?? "") ?? .None
 
         self.text_content = try container.decodeIfPresent(String.self, forKey: .text_content) ?? ""
         self.text_color = try container.decodeIfPresent(String.self, forKey: .text_color) ?? ""
         
-        self.size = try container.decodeIfPresent(Int.self, forKey: .size)
-        self.maxLines = try container.decodeIfPresent(Int.self, forKey: .maxLines)
+        self.size = try container.decodeIfPresent(Int.self, forKey: .size) ?? 0
+        self.maxLines = try container.decodeIfPresent(Int.self, forKey: .maxLines) ?? 0
         
         //image
         self.image_name = try container.decodeIfPresent(String.self, forKey: .image_name) ?? ""
-        self.width_height_ratio = try container.decodeIfPresent(Float.self, forKey: .width_height_ratio)
-        self.width_ratio_parent_view = try container.decodeIfPresent(Float.self, forKey: .width_ratio_parent_view)
-        self.space_vertical = try container.decodeIfPresent(Float.self, forKey: .space_vertical)
-        self.space_horizatal = try container.decodeIfPresent(Float.self, forKey: .space_horizatal)
+        self.width_height_ratio = try container.decodeIfPresent(Float.self, forKey: .width_height_ratio) ?? 0.0
+        self.width_ratio_parent_view = try container.decodeIfPresent(Float.self, forKey: .width_ratio_parent_view) ?? 0.0
+        self.space_vertical = try container.decodeIfPresent(Float.self, forKey: .space_vertical) ?? 0.0
+        self.space_horizatal = try container.decodeIfPresent(Float.self, forKey: .space_horizatal) ?? 0.0
     }
     
     func encode(to encoder: Encoder) throws {

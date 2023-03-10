@@ -137,11 +137,3 @@ class StackModemView: UIView{
     }
 }
 
-
-enum StackModemId: String{
-    case modem_title
-    case modem_description
-    case modem_detail
-    case modem_img
-    case none
-}

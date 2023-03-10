@@ -10,12 +10,12 @@ import UIKit
 
 extension UILabel{
     func parseLabel(attr: AttributeRes){
-        self.numberOfLines = attr.maxLines ?? 0
+        self.numberOfLines = attr.maxLines
         
         if attr.type == .Text{
             self.text = attr.text_content
-            self.textColor = UIColor().hexStringToUIColor(hex: attr.text_color ?? "#FFFFFF")
-            self.font = UIFont(name: "System", size: CGFloat(attr.size ?? 0))
+            self.textColor = UIColor().hexStringToUIColor(hex: attr.text_color )
+            self.font = UIFont(name: "System", size: CGFloat(attr.size ))
             
             return
         }
@@ -26,12 +26,12 @@ extension UILabel{
                 
                 switch (item.type){
                 case .Text:
-                    let attrText = NSAttributedString(string: item.text_content ?? "")
+                    let attrText = NSAttributedString(string: item.text_content )
                     str.append(attrText)
                     break
                 case .Image:
                     let attachment = NSTextAttachment()
-                    attachment.image = UIImage(named: item.image_name ?? "")
+                    attachment.image = UIImage(named: item.image_name )
                     let attachmentString = NSAttributedString(attachment: attachment)
                     str.append(attachmentString)
                     break
@@ -50,6 +50,6 @@ extension UILabel{
 
 extension UIImageView{
     func parseImg(attr: AttributeRes){
-        self.image = UIImage(named: attr.image_name ?? "")
+        self.image = UIImage(named: attr.image_name )
     }
 }
